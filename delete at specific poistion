@@ -1,0 +1,19 @@
+ #include<iostream>
+using namespace std;
+int main()
+{
+	int a[]={1,3,6,8,2,3,9,1,8},pos,i,len;
+	len=sizeof(a)/sizeof(a[0]);
+	cout<<"enter the position"<<endl;
+	cin>>pos;
+	for(i=pos-1;i<len;i++)
+	{
+		a[i]=a[i+1];
+		
+	}
+  
+  for(i=0;i<len-1;i++)
+  {
+  	cout<<a[i]<<endl;
+  }
+}
