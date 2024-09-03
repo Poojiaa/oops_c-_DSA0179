@@ -1,0 +1,37 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    string str;
+    int words = 0, vowels = 0, consonants = 0;
+
+    cout << "Enter a string: ";
+    getline(cin, str);
+
+    bool inWord = false;
+
+    for(int i = 0; i < str.length(); i++) {
+        char c = tolower(str[i]);  // Convert to lowercase
+
+        // Check if the character is a vowel
+        if(c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u') {
+            vowels++;
+        } else if(c >= 'a' && c <= 'z') {  // Check if it's a consonant
+            consonants++;
+        }
+
+        // Check for words
+        if(c == ' ' || c == '\n' || c == '\t') {
+            inWord = false;  // Word boundary
+        } else if(!inWord) {
+            inWord = true;
+            words++;
+        }
+    }
+
+    cout << "Number of words: " << words << endl;
+    cout << "Number of vowels: " << vowels << endl;
+    cout << "Number of consonants: " << consonants << endl;
+
+    return 0;
+}
